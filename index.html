@@ -80,7 +80,7 @@
       // Configuration
       const GROWTH_PER_CLICK = 35;
       const FONT_GROWTH_PER_CLICK = 25;
-      const MAX_NO_CLICKS = 5;
+      const MAX_NO_CLICKS = 8;
 
       const IMAGE_PATHS = [
         './images/image1.gif',
@@ -94,11 +94,14 @@
 
       const NO_BUTTON_MESSAGES = [
         'No',
-        'Are you sure?',
-        'Pookie please',
-        "Don't do this to me :(",
-        "You're breaking my heart",
-        "I'm gonna cry...",
+        'please bangaram',
+        'please',
+        'Sindhu bangaram',
+        'plase sappu mam',
+        'please maam',
+        'i am goona cry',
+        'can i get you a bf',
+        'younger bf',
       ];
 
       const ALT_TEXTS = [
@@ -122,9 +125,10 @@
 
         noClickCount++;
 
-        // Update image and alt text
-        imageDisplay.src = IMAGE_PATHS[noClickCount];
-        imageDisplay.alt = ALT_TEXTS[noClickCount];
+        // Update image and alt text (cycle through available images)
+        const imageIndex = Math.min(noClickCount, IMAGE_PATHS.length - 2);
+        imageDisplay.src = IMAGE_PATHS[imageIndex];
+        imageDisplay.alt = ALT_TEXTS[imageIndex];
 
         // Grow the "Yes" button to make it harder to ignore
         buttonHeight += GROWTH_PER_CLICK;
